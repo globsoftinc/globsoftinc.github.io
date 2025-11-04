@@ -323,7 +323,7 @@ img {
     padding: 9rem .75rem 1.5rem .75rem;
     border: 2px solid var(--first-color-light);
     border-radius: 1.5rem;
-    margin-left: 20%;
+    margin-left: 23%;
 }
 
 
@@ -822,4 +822,5 @@ img {
     .scrollup {
         right: 3rem;
     }
+
 }
