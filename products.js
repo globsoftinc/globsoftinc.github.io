@@ -6,28 +6,28 @@ const products = [
         name: "GlobWeb",
         image: "img/globweb.png",
         price: "Paid",
-        link: "https://globsoftinc.github.io/GlobWeb/"
+        link: "https://globweb.globsoft.tech"
     },
     {
         id: 2,
         name: "GlobIntern",
         image: "img/globintern.png",
         price: "Free",
-        link: "https://globsoftinc.github.io/GlobIntern/"
+        link: "https://globintern.globsoft.tech"
     },
     {
         id: 3,
         name: "GlobFinance",
         image: "img/globfinance.png",
         price: "Free",
-        link: "https://github.com/globsoftinc/GlobFinance/releases/download/Published/bill_splitter.apk"
+        link: "https://globfinance.globsoft.tech"
     },
     {
         id: 4,
         name: "GlobPass",
         image: "img/globpass.png",
         price: "Free",
-        link: "https://globsoftinc.github.io/GlobPass/"
+        link: "https://globpass.globsoft.tech"
     },
     {
         id: 5,
@@ -37,5 +37,6 @@ const products = [
         link: null
     }
 ];
+
 
 export default products;
