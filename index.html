@@ -87,10 +87,6 @@
                     </li>
 
                     <li class="nav__item">
-                        <a href="#shop" class="nav__link">Products</a>
-                    </li>
-
-                    <li class="nav__item">
                         <a href="#contact" class="nav__link">Contact</a>
                     </li>
                 </ul>
@@ -102,7 +98,7 @@
 
             <div class="nav__actions">
                 
-            
+            <i class="ri-user-line"></i>
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="ri-menu-line"></i>
                 </div>
@@ -136,120 +132,6 @@
             </div>
 
         </section>
-
-        <section class="new section" id="news">
-            <div class="new__container container grid">
-                <div class="new__data">
-                    <h2 class="section__title">
-                        A Letter from the Founder
-                    </h2>
-
-                    <p class="new__description">
-
-                    When we started GlobSoft Inc., we made a promise to ourselves and to our community: we would build technology that empowers the future. Not incremental improvements, but transformative solutions that push boundaries and challenge what's possible.
-                    <br><br>
-                    From the beginning, we believed in making "smaller bets in areas that might seem speculative or even audacious when compared to conventional wisdom." We've always strived to do more, to create meaningful impact with every line of code, every innovation, every product we bring to the world.
-                    
-                    <!-- Read More Section (Hidden by default) -->
-                    <span id="readMore" style="display: none;">
-                        <br><br>
-                        We've already built solutions that seemed crazy at the time. Solutions that seemed too ambitious, too risky, too unconventional. But today, those "crazy" ideas are transforming how businesses operate, how people connect, and how industries evolve. And we haven't stopped there. We are still pursuing ideas that make others hesitate, but ideas we are genuinely excited about.
-                        <br><br>
-                        We've learned that companies tend to get comfortable over time, content with incremental changes and the status quo. But in the technology industry, revolutionary ideas drive the next wave of growth. You need to be uncomfortable to stay relevant. You need to embrace the unknown.
-                        <br><br>
-                        Today, we're more committed than ever to our mission. We're building technology that doesn't just solve today's problems, it anticipates tomorrow's challenges. We're investing in bold bets. We're empowering our teams to think bigger. And we're dedicated to creating tools and platforms that will shape how humanity progresses.
-                        <br><br>
-                        Our Vision:
-                        <br><br>
-                        • Getting more ambitious things done – We refuse to settle for ordinary.
-                        <br>
-                        • Taking the long-term view – Real change takes time, patience, and persistence.
-                        <br>
-                        • Empowering great minds – We believe the best innovations come from talented people given the freedom to dream.
-                        <br>
-                        • Investing at the scale of our ambitions – We commit resources to ideas that matter.
-                        <br>
-                        • Transparency and accountability – We own our impact, our successes, and our challenges.
-                        <br>
-                        • Building technology that elevates humanity – Ultimately, everything we do is in service of improving lives.
-                        <br><br>
-                        We're not here to build another tech company. We're here to build the future. And we're just getting started.
-                        <br><br>
-                        We're excited to work with all of you, our team, our partners, our community, and everyone who shares our belief that technology should empower, not limit; inspire, not confuse; connect, not divide.
-                        <br><br>
-                        Rajan Poudel
-                        <br>
-                        Founder, GlobSoft Inc.
-                        <br><br>
-                        November 4, 2025
-                    </span>
-
-                    <br><br>
-                    <button 
-                        onclick="toggleReadMore()" 
-                        style="padding: 0.75rem 1.5rem; background-color: hsl(203, 93%, 40%); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: background-color 0.3s ease; margin-top: 1rem;"
-                         onmouseover="this.style.backgroundColor='hsl(208, 80%, 23%)'"
-                        onmouseout="this.style.backgroundColor='hsl(203, 93%, 40%)'"
-                        id="readMoreBtn">
-                        Read More
-                    </button>
-                </p>
-                </div>
-
-                <div class="new__content grid">
-                    <article class="new__card">
-                        <img src="img/RajanSignature.png" alt="image" class="new__img">
-                        <h2 class="new__title">- Founder, Rajan Poudel</h2>
-                    </article>
-                </div>
-            </div>
-        </section>
-       <section class="shop section" id="shop">
-    <h2 class="section__title">
-        Our Products
-    </h2>
-
-    <div class="shop__container container grid" id="shopContainer">
-        <!-- Products will be dynamically inserted here -->
-    </div>
-</section>
-
-<script type="module">
-    import products from './products.js';
-
-    // Function to render products
-    function renderProducts() {
-        const shopContainer = document.getElementById('shopContainer');
-        
-        products.forEach(product => {
-            const article = document.createElement('article');
-            article.className = 'shop__card';
-
-            let buttonHTML = '';
-            if (product.link) {
-                buttonHTML = `
-                    <button class="shop__button">
-                        <a href="${product.link}">
-                            <i class="ri-arrow-right-line"></i>
-                        </a>
-                    </button>
-                `;
-            }
-
-            article.innerHTML = `
-                <img src="${product.image}" alt="${product.name}" class="shop__img">
-                <h3 class="shop__title">${product.name}</h3>
-                <span class="shop__price">${product.price}</span>
-                ${buttonHTML}
-            `;
-
-            shopContainer.appendChild(article);
-        });
-    }
-
-    // Render products when page loads
-    document.addEventListener('DOMContentLoaded', renderProducts);
-</script>
         <section class="contact section" id="contact">
             <h2 class="section__title">
                 Contact Us
@@ -319,7 +201,7 @@
                     <ul class="footer__links">
 
                         <li>
-                            <a href="#shop" class="footer__link">Products</a>
+                            <a href="#home" class="footer__link">Home</a>
                         </li>
 
                         <li>
@@ -336,18 +218,7 @@
 
                     <ul class="footer__links">
                         <li>
-                            <a href="#shop" class="footer__link">GlobIntern</a>
-                        </li>
-
-                        <li>
-                            <a href="#shop" class="footer__link">GlobFinance</a>
-                        </li>
-
-                        <li>
-                            <a href="#shop" class="footer__link">GlobPass</a>
-                        </li>
-                        <li>
-                            <a href="#shop" class="footer__link">Others</a>
+                            <a href="https://globweb.globsoft.tech" class="footer__link">GlobWeb</a>
                         </li>
     
                     </ul>
@@ -388,42 +259,6 @@
     <a href="" class="scrollup" id="scroll-up">
         <i class="ri-arrow-up-line"></i>
     </a>
-<script type="module">
-    import products from 'products.js';
-
-    // Function to render products
-    function renderProducts() {
-        const shopContainer = document.getElementById('shopContainer');
-        
-        products.forEach(product => {
-            const article = document.createElement('article');
-            article.className = 'shop__card';
-
-            let buttonHTML = '';
-            if (product.link) {
-                buttonHTML = `
-                    <button class="shop__button">
-                        <a href="${product.link}">
-                            <i class="ri-arrow-right-line"></i>
-                        </a>
-                    </button>
-                `;
-            }
-
-            article.innerHTML = `
-                <img src="${product.image}" alt="${product.name}" class="shop__img">
-                <h3 class="shop__title">${product.name}</h3>
-                <span class="shop__price">${product.price}</span>
-                ${buttonHTML}
-            `;
-
-            shopContainer.appendChild(article);
-        });
-    }
-
-    // Render products when page loads
-    document.addEventListener('DOMContentLoaded', renderProducts);
-</script>
     <script src="js/scrollreveal.min.js"></script>
     <script src="js/main.js"></script>
 </body>
@@ -431,6 +266,7 @@
 
 
 </html>
+
 
 
 
