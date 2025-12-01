@@ -149,16 +149,25 @@ function toggleReadMore() {
         }
     });
 
-// Update system status
-document.addEventListener('DOMContentLoaded', function() {
+// Update system status - simple fetch
+document.addEventListener('DOMContentLoaded', async function() {
     const statusElement = document.getElementById('system-status');
     
-    if (typeof systemStatus !== 'undefined' && statusElement) {
-        const statusDot = statusElement.querySelector('.status-dot');
+    if (statusElement) {
         const statusText = statusElement.querySelector('.status-text');
         
-        // Update status based on systemStatus.status
-        statusElement.className = 'footer__status status-' + systemStatus.status;
-        statusText.textContent = systemStatus.message;
+        try {
+            const response = await fetch('https://admin.globsoft.tech/api/system-status');
+            const data = await response.json();
+            
+            statusElement.className = 'footer__status status-' + data.status;
+            statusText.textContent = data.message;
+        } catch (error) {
+            // Fallback to products.js
+            if (typeof systemStatus !== 'undefined') {
+                statusElement.className = 'footer__status status-' + systemStatus.status;
+                statusText.textContent = systemStatus.message;
+            }
+        }
     }
 });
