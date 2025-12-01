@@ -73,15 +73,16 @@
     <link rel="alternate" hreflang="x-default" href="https://globsoft.tech">
 
     <!-- Title -->
-    <title>GlobSoft Inc. - Tech for the future</title>
+    <title>Support Center - GlobSoft Inc.</title>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8038412498259988"
         crossorigin="anonymous"></script>
 
 </head>
 
+
 <body>
-    <header class="header" id="header">
+     <header class="header" id="header">
         <nav class="nav container">
             <a href="" class="nav__logo">
                 GlobSoft Inc.
@@ -90,14 +91,14 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="#home" class="nav__link" active-link>Home</a>
+                        <a href="/#home" class="nav__link" active-link>Home</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#about" class="nav__link" active-link>About</a>
+                        <a href="/#about" class="nav__link" active-link>About</a>
                     </li>
 
                     <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contact</a>
+                        <a href="/#contact" class="nav__link">Contact</a>
                     </li>
                     <li class="nav__item">
                         <a href="privacy.html" class="nav__link">Privacy Policy</a>
@@ -126,141 +127,108 @@
             </div>
         </div>
     </header>
+
     <main class="main">
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <img src="img/mymain.png" alt="image" class="home__img">
+        <section class="section container">
+            <h1 class="section__title">Support Center</h1>
+            <p style="text-align: center; color: var(--text-color); margin-bottom: 3rem;">
+                We're here to help! Reach out to us and we'll get back to you as soon as possible.
+            </p>
 
-                <div class="home__data">
-                    <h1 class="home__title">
-                        <span> Tech</span> For <br>
-                        The <span> Future</span> <br>
-                    </h1>
+            <div class="support__container grid">
+                <!-- Contact Information Cards -->
+                <div class="support__info-grid">
+                    <div class="support__info-card">
+                        <div class="support__icon">
+                            <i class="ri-mail-line"></i>
+                        </div>
+                        <h3 class="support__card-title">Email Us</h3>
+                        <p class="support__card-text">info.globsoft@gmail.com</p>
+                        <a href="mailto:info.globsoft@gmail.com" class="support__card-link">Send Email →</a>
+                    </div>
 
-                    <p class="home__description">
-                        We craft Technologies for the future, one innovation at a time.
-                    </p>
+                    <div class="support__info-card">
+                        <div class="support__icon">
+                            <i class="ri-whatsapp-fill"></i>
+                        </div>
+                        <h3 class="support__card-title">WhatsApp</h3>
+                        <p class="support__card-text">Chat with us instantly</p>
+                        <a href="https://api.whatsapp.com/send?phone=9779802922270&text=Hey%20GlobSoft!%20I%20need%20support%20with"
+                            target="_blank" class="support__card-link">Start Chat →</a>
+                    </div>
 
-                    <div class="home__buttons">
-                        <a href="products.html" class="button">
+                    <div class="support__info-card">
+                        <div class="support__icon">
+                            <i class="ri-phone-fill"></i>
+                        </div>
+                        <h3 class="support__card-title">Call Us</h3>
+                        <p class="support__card-text">+977 9802922270</p>
+                        <a href="tel:+9779802922270" class="support__card-link">Call Now →</a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="support__form-container">
+                    <div class="support__form-header">
+                        <h2 class="support__form-title">Send us a Message</h2>
+                        <p class="support__form-subtitle">Fill out the form below and we'll respond within 24 hours</p>
+                    </div>
+
+                    <form action="https://formsubmit.co/info.globsoft@gmail.com" method="POST" class="support__form">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Support Request (L5tO7mLG)">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" style="display:none">
+
+                        <div class="form__group">
+                            <label for="name" class="form__label">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form__input" placeholder="John Doe"
+                                required>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form__input"
+                                placeholder="john@example.com" required>
+                        </div>
+
+                        <div class="form__group">
+    <label for="product" class="form__label">Related Product *</label>
+    <select id="product" name="product" class="form__input" required>
+        <option value="">Select a product</option>
+        <!-- Products will be dynamically loaded here -->
+    </select>
+</div>
+
+                        <div class="form__group">
+                            <label for="subject" class="form__label">Subject *</label>
+                            <input type="text" id="subject" name="subject" class="form__input"
+                                placeholder="Brief description of your issue" required>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="message" class="form__label">Message *</label>
+                            <textarea id="message" name="message" class="form__textarea" rows="6"
+                                placeholder="Please describe your issue or question in detail..." required></textarea>
+                        </div>
+
+                       
+                        <div id="contact-message" class="contact__message"></div>
+                        <button type="submit" class="form__button">
                             <span>
-                                <i class="ri-arrow-right-line"></i>
+                                <i class="ri-send-plane-fill"></i>
                             </span>
-                            GO TO PRODUCTS
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-                <!--==================== ABOUT ====================-->
-        <section class="about section" id="about">
-            <div class="about__container container">
-                <div class="about__data">
-                    <h2 class="section__title about__title">
-                        About Us
-                    </h2>
-                    
-                    <p class="about__description">
-                        At GlobSoft Inc., we're not just a tech startup. We're architects of tomorrow's digital landscape. 
-                        Born from a vision to transform ideas into reality, we craft cutting-edge solutions that empower 
-                        businesses and individuals to thrive in an ever-evolving digital world.
-                    </p>
-                </div>
-
-                <div class="about__cards grid">
-                    <article class="about__card">
-                        <div class="about__card-icon">
-                            <i class="ri-lightbulb-flash-line"></i>
-                        </div>
-                        <h3 class="about__card-title">Innovation First</h3>
-                        <p class="about__card-description">
-                            We push boundaries and challenge conventions, turning bold ideas into groundbreaking products 
-                            that shape the future of technology.
-                        </p>
-                    </article>
-
-                    <article class="about__card">
-                        <div class="about__card-icon">
-                            <i class="ri-rocket-2-line"></i>
-                        </div>
-                        <h3 class="about__card-title">Rapid Evolution</h3>
-                        <p class="about__card-description">
-                            In a fast-paced digital world, we stay ahead of the curve, continuously evolving our solutions 
-                            to meet tomorrow's challenges today.
-                        </p>
-                    </article>
-
-                    <article class="about__card">
-                        <div class="about__card-icon">
-                            <i class="ri-team-line"></i>
-                        </div>
-                        <h3 class="about__card-title">User-Centric Design</h3>
-                        <p class="about__card-description">
-                            Every product we build is crafted with people in mind, ensuring seamless experiences that 
-                            make technology accessible and intuitive for everyone.
-                        </p>
-                    </article>
-
-                    <article class="about__card">
-                        <div class="about__card-icon">
-                            <i class="ri-global-line"></i>
-                        </div>
-                        <h3 class="about__card-title">Global Impact</h3>
-                        <p class="about__card-description">
-                            From Nepal to the world, we're building solutions that transcend borders, creating value 
-                            and opportunities for communities everywhere.
-                        </p>
-                    </article>
-                </div>
-
-                <div class="about__stats grid">
-                    <div class="about__stat">
-                       <h3 class="about__stat-number" id="products-count">0</h3>
-                        <p class="about__stat-text">Products Launched</p>
-                    </div>
-                    <div class="about__stat">
-                        <h3 class="about__stat-number">100%</h3>
-                        <p class="about__stat-text">Client Satisfaction</p>
-                    </div>
-                    <div class="about__stat">
-                        <h3 class="about__stat-number">24/7</h3>
-                        <p class="about__stat-text">Support Available</p>
-                    </div>
-                </div>
-                
-            </div>
-        </section>
-        <section class="contact section" id="contact">
-            <h2 class="section__title">
-                Contact Us
-            </h2>
-
-            <div class="contact__container container grid">
-                <img src="img/contact.png" alt="image" class="contact__img">
-
-                <div class="contact__content">
-                    <div>
-                        <h3 class="contact__title">Contact Us</h3>
-
-                        <address class="contact__info">
-                            You can write to us from our support portal, contact us through our social handles or visit us , we will gladly
-                            assist you.
-                        </address>
-                    </div>
-                    <div>
-                        <h3 class="contact__title">Find us here</h3>
-
-                        <address class="contact__info">
-                            Bharatpur 7 Chitwan<br> 44200, Madi Thori Road <br> Nepal <br>
-                        </address>
-                    </div>
+                            Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
-
     </main>
-    <footer class="footer" id="footer">
+
+    
+<footer class="footer" id="footer">
         <div class="footer__container container grid">
             <div>
                 <img src="img/mymain.png" height="20%" width="20%" alt="Logo"> <br>
@@ -303,13 +271,13 @@
 
                     <ul class="footer__links">
                         <li>
-                            <a href="#home" class="footer__link">Home</a>
+                            <a href="/#home" class="footer__link">Home</a>
                         </li>
                         <li>
-                            <a href="#about" class="footer__link">About Us</a>
+                            <a href="/#about" class="footer__link">About Us</a>
                         </li>
                         <li>
-                            <a href="#contact" class="footer__link">Contact</a>
+                            <a href="/#contact" class="footer__link">Contact</a>
                         </li>
                         <li>
                             <a href="support.html"
@@ -392,14 +360,96 @@
         </span>
     </footer>
 
-    <a href="" class="scrollup" id="scroll-up">
+     <a href="" class="scrollup" id="scroll-up">
         <i class="ri-arrow-up-line"></i>
     </a>
     <script src="products.js"></script>
     <script src="js/scrollreveal.min.js"></script>
     <script src="js/main.js"></script>
+<script>
+    // Populate product dropdown from products.js
+    document.addEventListener('DOMContentLoaded', function() {
+        const productSelect = document.getElementById('product');
+        
+        if (typeof products !== 'undefined' && productSelect) {
+            // Save the "Other" option
+            const otherOption = productSelect.querySelector('option[value="Other"]');
+            // Save the first empty option
+            const firstOption = productSelect.querySelector('option[value=""]');
+            
+            // Clear all options
+            productSelect.innerHTML = '';
+            
+            // Add back the first option
+            productSelect.appendChild(firstOption);
+            
+            // Add products from products.js
+            products.forEach(product => {
+                const option = document.createElement('option');
+                option.value = product.name;
+                option.textContent = product.name;
+                productSelect.appendChild(option);
+            });
+            
+            // Add "Other" option at the end
+            if (otherOption) {
+                productSelect.appendChild(otherOption);
+            }
+        }
+    });
+
+    // Handle form submission with AJAX
+    const contactForm = document.querySelector('.support__form');
+    const contactMessage = document.getElementById('contact-message');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            
+            // Show loading state
+            const submitButton = contactForm.querySelector('.form__button');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.innerHTML = '<span><i class="ri-loader-4-line"></i></span>Sending...';
+            submitButton.disabled = true;
+            
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    contactMessage.textContent = 'Message sent successfully ✓';
+                    contactMessage.style.color = '#4ade80';
+                    contactForm.reset();
+                    
+                    setTimeout(() => {
+                        contactMessage.textContent = '';
+                    }, 5000);
+                } else {
+                    throw new Error('Failed to send');
+                }
+            })
+            .catch(error => {
+                contactMessage.textContent = 'Message failed to send ✗';
+                contactMessage.style.color = '#f87171';
+                
+                setTimeout(() => {
+                    contactMessage.textContent = '';
+                }, 5000);
+            })
+            .finally(() => {
+                // Restore button state
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+            });
+        });
+    }
+</script>
 </body>
-
-
 
 </html>
