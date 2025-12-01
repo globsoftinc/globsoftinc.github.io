@@ -2,8 +2,8 @@
 
 // System Status Configuration
 const systemStatus = {
-    status: "running",  // Options: "running", "maintenance", "offline"
-    message: "All Systems Operational"
+    status: "offline",  // Options: "running", "maintenance", "offline"
+    message: "API failed (Fallback)"
 };
 
 const products = [
@@ -42,4 +42,12 @@ const products = [
         link: "https://clearcut.globsoft.tech",
         desc: "Professional-grade background removal powered by AI. Upload your image and get a transparent PNG in seconds. Completely free, no registration needed."
     },
+    {
+        id: 6,
+        name: "Fallback",
+        image: "img/failed.png",
+        link: "https://admin.globsoft.tech",
+        desc: "API failed (Fallback)"
+    },
+
 ];
