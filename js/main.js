@@ -1,24 +1,41 @@
 /*=============== RENDER WAFFLE MENU FROM PRODUCTS ===============*/
-function renderWaffleMenu() {
+async function renderWaffleMenu() {
     const appsGrid = document.querySelector('.apps__grid');
     
-    if (appsGrid && typeof products !== 'undefined') {
-        // Clear existing content
-        appsGrid.innerHTML = '';
-        
-        // Generate menu items from products array
-        products.forEach(product => {
-            const appItem = document.createElement('a');
-            appItem.href = product.link;
-            appItem.className = 'app__item';
+    if (appsGrid) {
+        try {
+            // Try to fetch from API
+            const response = await fetch('https://admin.globsoft.tech/api/products');
+            const products = await response.json();
             
-            appItem.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <span>${product.name}</span>
-            `;
-            
-            appsGrid.appendChild(appItem);
-        });
+            appsGrid.innerHTML = '';
+            products.forEach(product => {
+                const appItem = document.createElement('a');
+                appItem.href = product.link;
+                appItem.className = 'app__item';
+                appItem.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <span>${product.name}</span>
+                `;
+                appsGrid.appendChild(appItem);
+            });
+        } catch (error) {
+            console.warn('Failed to fetch products from API, using fallback');
+            // Fallback to local products.js
+            if (typeof products !== 'undefined') {
+                appsGrid.innerHTML = '';
+                products.forEach(product => {
+                    const appItem = document.createElement('a');
+                    appItem.href = product.link;
+                    appItem.className = 'app__item';
+                    appItem.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <span>${product.name}</span>
+                    `;
+                    appsGrid.appendChild(appItem);
+                });
+            }
+        }
     }
 }
 
@@ -140,16 +157,24 @@ function toggleReadMore() {
 }
 
 // Update products count dynamically
-    document.addEventListener('DOMContentLoaded', function() {
-        const productsCountElement = document.getElementById('products-count');
-        
-        if (typeof products !== 'undefined' && productsCountElement) {
-            const count = products.length;
-            productsCountElement.textContent = count + '+';
+document.addEventListener('DOMContentLoaded', async function() {
+    const productsCountElement = document.getElementById('products-count');
+    
+    if (productsCountElement) {
+        try {
+            const response = await fetch('https://admin.globsoft.tech/api/products');
+            const products = await response.json();
+            productsCountElement.textContent = products.length + '+';
+        } catch (error) {
+            // Fallback to local products.js
+            if (typeof products !== 'undefined') {
+                productsCountElement.textContent = products.length + '+';
+            }
         }
-    });
+    }
+});
 
-// Update system status - simple fetch
+// Update system status
 document.addEventListener('DOMContentLoaded', async function() {
     const statusElement = document.getElementById('system-status');
     
@@ -163,7 +188,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             statusElement.className = 'footer__status status-' + data.status;
             statusText.textContent = data.message;
         } catch (error) {
-            // Fallback to products.js
+            console.warn('Failed to fetch system status from API, using fallback');
             if (typeof systemStatus !== 'undefined') {
                 statusElement.className = 'footer__status status-' + systemStatus.status;
                 statusText.textContent = systemStatus.message;
@@ -171,3 +196,4 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     }
 });
+
