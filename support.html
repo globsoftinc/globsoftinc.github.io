@@ -367,36 +367,65 @@
     <script src="js/scrollreveal.min.js"></script>
     <script src="js/main.js"></script>
 <script>
-    // Populate product dropdown from products.js
-    document.addEventListener('DOMContentLoaded', function() {
-        const productSelect = document.getElementById('product');
+    /*=============== RENDER PRODUCT DROPDOWN FROM API ===============*/
+async function renderProductDropdown() {
+    const productSelect = document.getElementById('product');
+    
+    if (productSelect) {
+        // Save the "Other" option
+        const otherOption = productSelect. querySelector('option[value="Other"]');
+        // Save the first empty option
+        const firstOption = productSelect.querySelector('option[value=""]');
         
-        if (typeof products !== 'undefined' && productSelect) {
-            // Save the "Other" option
-            const otherOption = productSelect.querySelector('option[value="Other"]');
-            // Save the first empty option
-            const firstOption = productSelect.querySelector('option[value=""]');
+        try {
+            // Try to fetch from API
+            const response = await fetch('https://admin.globsoft.tech/api/products');
+            const productsData = await response.json();
             
             // Clear all options
             productSelect.innerHTML = '';
             
             // Add back the first option
-            productSelect.appendChild(firstOption);
+            if (firstOption) {
+                productSelect. appendChild(firstOption);
+            }
             
-            // Add products from products.js
-            products.forEach(product => {
-                const option = document.createElement('option');
+            // Add products from API
+            productsData.forEach(product => {
+                const option = document. createElement('option');
                 option.value = product.name;
                 option.textContent = product.name;
-                productSelect.appendChild(option);
+                productSelect. appendChild(option);
             });
             
-            // Add "Other" option at the end
-            if (otherOption) {
-                productSelect.appendChild(otherOption);
+        } catch (error) {
+            // Fallback to local products.js
+            if (typeof products !== 'undefined') {
+                // Clear all options
+                productSelect.innerHTML = '';
+                
+                // Add back the first option
+                if (firstOption) {
+                    productSelect.appendChild(firstOption);
+                }
+                
+                // Add products from products.js
+                products.forEach(product => {
+                    const option = document. createElement('option');
+                    option.value = product.name;
+                    option. textContent = product. name;
+                    productSelect.appendChild(option);
+                });
+                
             }
         }
-    });
+    }
+}
+
+// Call when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    renderProductDropdown();
+});
 
     // Handle form submission with AJAX
     const contactForm = document.querySelector('.support__form');
@@ -454,3 +483,4 @@
 
 
 </html>
+
